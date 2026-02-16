@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Poppins (400, 500, 600) and Nunito Sans (500) from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Nunito+Sans:wght@500&display=swap');
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: unset;
+    /* Use Nunito Sans for headings by default (falls back to Poppins) */
+    font-family: var(--font-nunito-sans);
+    font-weight: 500;
+  }
+
+  :root {
+    /* Font family variables */
+    --font-poppins:
+      'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+      Arial;
+    --font-nunito-sans: 'Nunito Sans', var(--font-poppins);
+    --font-sans: var(--font-poppins);
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: white;
+    --secondary: #fffae2;
+
+    --card: 240 5% 96%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 80%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.2rem;
+
+    --success: 196 52% 74%;
+    --warning: 34 89% 85%;
+    --error: 10 100% 86%;
+
+    /* Custom Colors */
+    --color-blue: #0075c5;
+    --color-green: #2bb564;
+    --color-lavender: #f1eef8;
+    --color-gray: #676769;
+    --color-navy: #101a25;
+  }
+
+  [data-theme='dark'] {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0, 0%, 15%, 0.8;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --success: 196 100% 14%;
+    --warning: 34 51% 25%;
+    --error: 10 39% 43%;
+  }
+}
+
+/* Font Family Utilities */
+.font-poppins {
+  font-family: var(--font-poppins) !important;
+}
+.font-nunito-sans {
+  font-family: var(--font-nunito-sans) !important;
+}
+
+/* Poppins Font Weights */
+.font-poppins-400 {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+}
+.font-poppins-500 {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+}
+.font-poppins-600 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+}
+
+/* Nunito Sans Font Weights */
+.font-nunito-500 {
+  font-family: var(--font-nunito-sans);
+  font-weight: 500;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    background-color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Utility classes / examples to opt into Poppins or Nunito Sans for specific sections */
+.font-poppins {
+  font-family: var(--font-poppins) !important;
+}
+.font-nunito-sans {
+  font-family: var(--font-nunito-sans) !important;
+}
+
+html {
+  opacity: 0;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  opacity: initial;
+}
+
+.text-light {
+  color: #1e1e1e;
+}
+.bg-light {
+  color: #1e1e1e;
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+/* Custom Color Utilities */
+/* Blue - #0075C5 */
+.bg-blue {
+  background-color: var(--color-blue);
+}
+.text-blue {
+  color: var(--color-blue);
+}
+.border-blue {
+  border-color: var(--color-blue);
+}
+
+/* Green - #2BB564 */
+.bg-green {
+  background-color: var(--color-green);
+}
+.text-green {
+  color: var(--color-green);
+}
+.border-green {
+  border-color: var(--color-green);
+}
+
+/* Lavender - #F1EEF8 */
+.bg-lavender {
+  background-color: var(--color-lavender);
+}
+.text-lavender {
+  color: var(--color-lavender);
+}
+.border-lavender {
+  border-color: var(--color-lavender);
+}
+
+/* Gray - #676769 */
+.bg-gray {
+  background-color: var(--color-gray);
+}
+.text-gray {
+  color: var(--color-gray);
+}
+.border-gray {
+  border-color: var(--color-gray);
+}
+
+/* Navy - #101A25 */
+.bg-navy {
+  background-color: var(--color-navy);
+}
+.text-navy {
+  color: var(--color-navy);
+}
+.border-navy {
+  border-color: var(--color-navy);
+}
+.border-secondary {
+  border-color: var(--secondary);
+}
+
+.responsive-mx {
+  @apply mx-4 sm:mx-5  md:mx-[4vw] lg:mx-[6vw];
+}
+
+.flex-between-center {
+  @apply flex justify-between items-center;
+}
+.flex-between-start {
+  @apply flex justify-between items-start;
+}
+
+/* DEBUG: visible outline to confirm globals.css is applied */
+.debug-outline {
+  outline: 4px solid magenta !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
