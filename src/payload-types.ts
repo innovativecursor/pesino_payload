@@ -264,7 +264,6 @@ export interface Post {
  */
 export interface Media {
   id: number;
-  alt?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -857,7 +856,6 @@ export interface PostsSelect<T extends boolean = true> {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

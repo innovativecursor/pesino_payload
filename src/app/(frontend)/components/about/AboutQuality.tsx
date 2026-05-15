@@ -31,7 +31,7 @@ export const AboutQuality = () => {
   const [activeSlide, setActiveSlide] = useState(0)
 
   return (
-    <section className="xl:py-32 sm:py-20 py-10 sm:pb-28 pb-24  ml-4 sm:ml-5 md:ml-[4vw] lg:ml-[6vw]">
+    <section className="xl:py-36 sm:py-20 py-10 sm:pb-28 pb-24  ml-4 sm:ml-5 md:ml-[4vw] lg:ml-[6vw]">
       <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-20 gap-5 items-center">
         {/* Left Content */}
         <div>

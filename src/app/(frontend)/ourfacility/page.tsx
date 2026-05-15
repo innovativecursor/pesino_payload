@@ -3,7 +3,7 @@ import { About } from '../components/about/About'
 import { getServerSideURL } from '@/utilities/getURL'
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'Our Facility',
   description:
     'Learn about Pesino Pharmarceuticals, our mission, values, and commitment to delivering high-quality pharmaceutical products globaly.',
   openGraph: {

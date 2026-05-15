@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
 
   const companyLinks = [
     { label: 'Home', url: '/' },
-    { label: 'About Us', url: '/Aboutus' },
+    { label: 'Our Facility', url: '/ourfacility' },
     { label: 'Products', url: '/Products' },
     { label: 'Contact Us', url: '/Contactus' },
   ]

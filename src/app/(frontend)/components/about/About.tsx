@@ -1,13 +1,27 @@
 'use client'
 
+import Image from 'next/image'
 import ManufacturingSection from '../home/Manufacturing'
 import { AboutQuality } from './AboutQuality'
 import { AboutTop } from './AboutTop'
+import AboutCertificate from './AboutCertificate'
+import AboutManufacturingData from './AboutManufacturingData'
 
 export const About = () => {
   return (
     <>
       <AboutTop />
+      <div className="lg:my-28 md:my-20 sm:my-16 my-8 responsive-mx">
+        <Image
+          src="/about11.png"
+          alt="about image"
+          width={900}
+          height={900}
+          className="object-contain w-full h-auto"
+        />
+      </div>
+      <AboutCertificate />
+      <AboutManufacturingData />
       <AboutQuality />
       <ManufacturingSection
         titleLine1="Our Vision: Enhanced"
