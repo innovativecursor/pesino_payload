@@ -10,9 +10,9 @@ type ProductCardProps = {
 
 export const ProductCard = ({ item }: ProductCardProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       {/* Image Box */}
-      <div className="relative rounded-xl h-[150px] md:h-[240px] overflow-hidden">
+      <div className="relative rounded-xl h-[150px] md:h-[180px] overflow-hidden">
         <Image
           src={item.image}
           alt={item.name}
