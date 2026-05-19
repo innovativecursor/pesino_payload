@@ -6,20 +6,16 @@ import { AboutQuality } from './AboutQuality'
 import { AboutTop } from './AboutTop'
 import AboutCertificate from './AboutCertificate'
 import AboutManufacturingData from './AboutManufacturingData'
+import AboutGallery from './AboutGallery'
 
-export const About = () => {
+interface Props {
+  gallery: any[]
+}
+export const About = ({ gallery }: Props) => {
   return (
     <>
       <AboutTop />
-      <div className="lg:my-28 md:my-20 sm:my-16 my-8 responsive-mx">
-        <Image
-          src="/about11.png"
-          alt="about image"
-          width={900}
-          height={900}
-          className="object-contain w-full h-auto"
-        />
-      </div>
+      <AboutGallery gallery={gallery} />
       <AboutCertificate />
       <AboutManufacturingData />
       <AboutQuality />

@@ -18,6 +18,7 @@ import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './src/utilities/getURL'
 import { Products } from './src/collections/Products'
 import ContactSubmissions from './src/collections/contact-submissions'
+import AboutPage from '@/collections/About/config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -65,7 +66,7 @@ export default buildConfig({
   }),
   collections: [Pages, Posts, Media, Categories, Users, Products, ContactSubmissions],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer, Hero],
+  globals: [Header, Footer, Hero, AboutPage],
   plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET,
   sharp,

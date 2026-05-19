@@ -45,7 +45,7 @@ export const AllProducts = () => {
               <p className="text-lg text-gray-500">No products found.</p>
             </div>
           ) : (
-            <div className="grid md:mt-16 mt-6 grid-cols-2 md:grid-cols-3 gap-y-7 gap-x-4 sm:gap-x-6 md:gap-12">
+            <div className="grid md:mt-16 mt-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-8">
               {products.map((item, index) => (
                 <ProductCard
                   key={item.id}
@@ -60,13 +60,13 @@ export const AllProducts = () => {
           )}
 
           {/* Simple Pagination UI */}
-          <div className="mt-12 md:mt-16 flex items-center justify-center gap-4 text-sm">
+          <div className="mt-12 md:mt-16 flex items-center justify-center gap-4 text-xs">
             {/* Previous */}
             <button
               onClick={() => setPage(page - 1)}
               disabled={!hasPrevPage}
               className="
-      flex items-center gap-2 rounded-full border border-blue px-4 py-2
+      flex items-center gap-2 rounded-full border border-blue px-4 py-1
       transition
       disabled:cursor-not-allowed disabled:opacity-40
     bg-blue hover:text-white
@@ -88,7 +88,7 @@ export const AllProducts = () => {
               onClick={() => setPage(page + 1)}
               disabled={!hasNextPage}
               className="
-      flex items-center gap-2 rounded-full border border-blue px-4 py-2
+      flex items-center gap-2 rounded-full border border-blue px-4 py-1
       transition
       disabled:cursor-not-allowed disabled:opacity-40
       bg-blue hover:text-white

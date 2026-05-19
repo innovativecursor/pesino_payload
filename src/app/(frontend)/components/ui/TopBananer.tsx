@@ -79,7 +79,7 @@ export function TopBanner({
         alt={alt}
         width={width}
         height={height}
-        className={`w-full h-auto ${className}`}
+        className={`w-full h-44 md:h-auto ${className}`}
         priority
       />
 
@@ -87,13 +87,13 @@ export function TopBanner({
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
         <div ref={contentRef} className="flex flex-col items-center">
           {title && (
-            <h1 className="text-black font-poppins-500 text-xs md:text-5xl font-extrabold md:mb-7 mb-1">
+            <h1 className="text-black font-poppins-500 text-lg md:text-5xl font-extrabold md:mb-7 mb-2">
               {title}
             </h1>
           )}
 
           {description && (
-            <p className="max-w-3xl px-4 md:px-0 font-poppins-400 text-gray text-[7px] md:text-base tracking-wide leading-relaxed">
+            <p className="max-w-3xl px-4 md:px-0 font-poppins-400 text-gray text-[10px] md:text-base tracking-wide leading-relaxed">
               {description}
             </p>
           )}

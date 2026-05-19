@@ -21,7 +21,7 @@ export const SearchBar = ({ placeholder = 'Search', onChange }: SearchBarProps) 
             pl-11 pr-4
             py-3
             rounded-lg
-            bg-white
+            bg-white border-2 border-gray-100
             text-sm
             text-gray-700
             placeholder-gray-400
