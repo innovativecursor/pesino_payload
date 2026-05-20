@@ -1,6 +1,7 @@
-const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL
-  ? `${process.env.NEXT_PUBLIC_SERVER_URL.replace(/\/$/, '')}/api`
-  : '/api'
+const baseUrl =
+  typeof window === 'undefined' && process.env.NEXT_PUBLIC_SERVER_URL
+    ? `${process.env.NEXT_PUBLIC_SERVER_URL.replace(/\/$/, '')}/api`
+    : '/api'
 
 const endpoints = {
   hero: {

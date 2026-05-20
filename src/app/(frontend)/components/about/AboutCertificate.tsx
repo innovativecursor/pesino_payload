@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const certificates = [
   {
     id: 1,
-    title: 'GMP Approved',
+    title: 'WHO GMP Approved',
     image: '/certificate1.png',
   },
   {

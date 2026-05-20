@@ -132,7 +132,7 @@ export const Aboutus = () => {
           </div>
 
           <Link
-            href="/Aboutus"
+            href="/Products"
             className="about-img-bottom overflow-hidden md:h-[200px] xl:h-[280px] sm:h-[200px] h-[120px] flex items-center"
           >
             <Image

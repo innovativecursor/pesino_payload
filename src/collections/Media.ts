@@ -11,13 +11,10 @@ export const Media: CollectionConfig = {
   },
   upload: {
     staticDir: path.resolve('/var/www/pesino-media'), // For linux
-    // staticDir: path.resolve('F:\Shawn\pbrs-uploads'), // For windows
+    // staticDir: path.resolve('F:\Shawn\pesino-uploads'), // For windows
     // staticDir: 'media', // Folder where files will be stored
     //  staticURL: '/media/images',
     mimeTypes: ['image/*'], // Allow images & videos
   },
   fields: [],
 }
-
-
-

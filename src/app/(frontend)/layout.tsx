@@ -7,7 +7,6 @@ import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
-import { draftMode } from 'next/headers'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -20,8 +19,6 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { isEnabled } = await draftMode()
-
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -46,7 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <InitTheme />
         <link href="/logo-2.svg" rel="icon" sizes="32x32" />
-        <link href="/logoi-2.svg" rel="icon" type="image/svg+xml" />
+        <link href="/logo-2.svg" rel="icon" type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import type { AboutPage } from '@/payload-types'
 import ManufacturingSection from '../home/Manufacturing'
 import { AboutQuality } from './AboutQuality'
 import { AboutTop } from './AboutTop'
@@ -9,7 +9,7 @@ import AboutManufacturingData from './AboutManufacturingData'
 import AboutGallery from './AboutGallery'
 
 interface Props {
-  gallery: any[]
+  gallery: NonNullable<AboutPage['gallery']>
 }
 export const About = ({ gallery }: Props) => {
   return (
