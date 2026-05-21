@@ -15,7 +15,7 @@ export const About = ({ gallery }: Props) => {
   return (
     <>
       <AboutTop />
-      <AboutGallery gallery={gallery} />
+      <AboutGallery />
       <AboutCertificate />
       <AboutManufacturingData />
       <AboutQuality />

@@ -266,6 +266,7 @@ export interface Post {
  */
 export interface Media {
   id: number;
+  alt?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -858,6 +859,7 @@ export interface PostsSelect<T extends boolean = true> {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -1090,6 +1092,8 @@ export interface Hero {
  */
 export interface AboutPage {
   id: number;
+  leftImage: number | Media;
+  address: string;
   gallery?:
     | {
         image: number | Media;
@@ -1169,6 +1173,8 @@ export interface HeroSelect<T extends boolean = true> {
  * via the `definition` "about-page_select".
  */
 export interface AboutPageSelect<T extends boolean = true> {
+  leftImage?: T;
+  address?: T;
   gallery?:
     | T
     | {

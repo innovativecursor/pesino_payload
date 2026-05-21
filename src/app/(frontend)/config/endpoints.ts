@@ -7,6 +7,9 @@ const endpoints = {
   hero: {
     getAll: `${baseUrl}/globals/hero`,
   },
+  aboutPage: {
+    get: `${baseUrl}/globals/about-page`,
+  },
   testimonials: {
     getAll: `${baseUrl}/testimonials`,
   },

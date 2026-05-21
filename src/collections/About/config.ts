@@ -11,8 +11,23 @@ export const AboutPage: GlobalConfig = {
 
   fields: [
     {
+      name: 'leftImage',
+      label: 'Left Image',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+
+    {
+      name: 'address',
+      label: 'Address',
+      type: 'textarea',
+      required: true,
+    },
+
+    {
       name: 'gallery',
-      label: 'About Gallery',
+      label: 'Gallery',
       type: 'array',
 
       fields: [
