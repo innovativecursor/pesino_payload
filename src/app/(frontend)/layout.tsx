@@ -33,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-9082872218',
+      telephone: '+91 8591269348',
       contactType: 'customer service',
     },
   }

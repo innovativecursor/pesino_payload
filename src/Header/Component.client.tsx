@@ -46,7 +46,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             size="lg"
             className="bg-blue text-white border border-blue lg:text-base text-sm rounded-full px-8 font-poppins-400 font-medium hover:bg-white hover:text-black hover:border-black   transition-all"
           >
-            <a href="tel:+9082872218">+91 9082872218</a>
+            <a href="tel:+8591269348">+91 8591269348</a>
           </Button>
         </div>
 
@@ -107,10 +107,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                     Quick Contact
                   </p>
                   <a
-                    href="tel:+919082872218"
+                    href="tel:+918591269348"
                     className="block text-base font-medium text-black hover:text-blue transition-colors"
                   >
-                    +91 9082872218
+                    +91 8591269348
                   </a>
                 </div>
 
@@ -118,7 +118,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                   size="lg"
                   className="w-full bg-blue text-white border border-blue rounded-xl py-0 font-poppins-500 font-semibold text-base hover:bg-white hover:text-black hover:border-black transition-all shadow-lg shadow-blue/20"
                 >
-                  <a href="tel:+919082872218">Call Now</a>
+                  <a href="tel:+918591269348">Call Now</a>
                 </Button>
 
                 <p className="text-center text-xs text-black/30 font-medium">

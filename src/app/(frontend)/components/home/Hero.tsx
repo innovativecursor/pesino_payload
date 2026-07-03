@@ -196,12 +196,12 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="sm:mb-8 mb-6 mt-4">
+            <div className="sm:mb-8 mb-6 mt-6">
               <p className="hero-desc text-gray font-poppins-400 tracking-wide text-sm md:text-base">
-                Quality our way of life....
+                Explore Pesino Pharma&#39;s State-of-the-Art Facilities and
               </p>
               <p className="hero-desc text-gray font-poppins-400 tracking-wide text-sm md:text-base">
-                Serving Humankind through quality Medicines
+                Commitment to Quality Production.
               </p>
             </div>
 

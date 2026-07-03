@@ -86,13 +86,13 @@ export const AboutTop = () => {
       {/* LEFT */}
       <div ref={leftRef} className="xl:col-span-1">
         <h1 className="font-poppins-500 tracking-wide text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-[2.5vw] text-navy md:mb-6 mb-3">
-          Your Strategic
-          <span className="block lg:mt-3">Manufacturing Partner</span>
+          Our Global Network,
+          <span className="block lg:mt-3"> Your Reliable Supply</span>
         </h1>
 
         <p className="sm:mt-5 text-gray font-poppins-400 md:text-base sm:text-sm text-xs leading-relaxed md:mb-8 sm:mb-5 mb-3">
-          From proactive distribution to reliable supply chains, we bridge the gap between essential
-          medication and patients worldwide, serving diverse communities across four continents.
+          Connecting manufacturers, distributors, and patients across continents with a seamless,
+          dependable supply chain that ensures timely access to essential healthcare solutions.
         </p>
 
         <Button href="/Contactus" variant="outline">

@@ -1,119 +1,417 @@
+// 'use client'
+
+// import React, { useState } from 'react'
+// import Link from 'next/link'
+// import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
+// import { Logo } from '@/components/Logo/Logo'
+
+// export const Footer: React.FC = () => {
+//   const [email, setEmail] = useState('')
+
+//   const companyLinks = [
+//     { label: 'Home', url: '/' },
+//     { label: 'Our Facility', url: '/ourfacility' },
+//     { label: 'Products', url: '/Products' },
+//     { label: 'Contact Us', url: '/Contactus' },
+//   ]
+
+//   const handleSubscribe = (e: React.FormEvent) => {
+//     e.preventDefault()
+//     console.log('Subscribed:', email)
+//     setEmail('')
+//   }
+
+//   return (
+//     <footer className="bg-navy text-white py-12 md:py-24">
+//       <div className="responsive-mx">
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+//           <div className="">
+//             <Link href="/">
+//               <Logo priority={true} className="invert dark:invert-0" />
+//             </Link>
+
+//             <p className=" font-poppins-400 text-sm leading-relaxed max-w-sm mt-2">
+//               Precision and Excellence in Pharmaceutical Manufacturing: Explore Pesino Pharma&apos;s
+//               State-of-the-Art Facilities and Commitment to Quality Production.
+//             </p>
+
+//             <div className="space-y-3 mt-8">
+//               <h4 className="font-poppins-600 text-lg">Subscribe</h4>
+//               <form onSubmit={handleSubscribe} className="flex">
+//                 <input
+//                   type="email"
+//                   placeholder="Email Address"
+//                   aria-label="Email Address"
+//                   value={email}
+//                   onChange={(e) => setEmail(e.target.value)}
+//                   className="bg-[#1a2836]  placeholder-gray/60 px-4 py-3 rounded-l-lg w-full max-w-[220px] text-sm focus:outline-none focus:ring-1 focus:ring-blue"
+//                   required
+//                 />
+//                 <button
+//                   type="submit"
+//                   className="bg-[#1a2836]  px-4 py-3 rounded-r-lg hover:bg-blue/90 transition-colors"
+//                   aria-label="Subscribe"
+//                 >
+//                   <ArrowRight size={20} />
+//                 </button>
+//               </form>
+//             </div>
+//           </div>
+
+//           <div className="md:pl-10 lg:pl-20">
+//             <h4 className="font-poppins-600 text-white text-lg mb-6">Company</h4>
+//             <nav className="space-y-5">
+//               {companyLinks.map(({ label, url }) => (
+//                 <Link
+//                   key={label}
+//                   href={url}
+//                   className="block hover:text-blue transition-colors text-sm"
+//                 >
+//                   {label}
+//                 </Link>
+//               ))}
+//             </nav>
+//           </div>
+
+//           <div>
+//             <h4 className="font-poppins-600 text-lg mb-6">Head Office</h4>
+//             <div className="space-y-5">
+//               <div className="flex items-start gap-3">
+//                 <MapPin size={18} className=" flex-shrink-0" />
+//                 <span className=" text-xs leading-relaxed">
+//                   11/8-405, Ashish Complex, Dahisar East, Mumbai-400068, India
+//                 </span>
+//               </div>
+
+//               <div className="flex items-center gap-3">
+//                 <Phone size={18} className=" flex-shrink-0" />
+//                 <a href="tel:+918591269348" className=" transition-colors text-xs">
+//                   +91 8591269348
+//                 </a>
+//               </div>
+
+//               <div className="flex items-center gap-3">
+//                 <Phone size={18} className=" flex-shrink-0" />
+//                 <a href="tel:+918655100951" className=" transition-colors text-xs">
+//                   +91 8655100951
+//                 </a>
+//               </div>
+
+//               <div className="flex items-center gap-3">
+//                 <Mail size={18} className=" flex-shrink-0" />
+//                 <a
+//                   href="mailto:pesino_pharma@yahoo.co.in"
+//                   className="transition-colors text-xs break-all"
+//                 >
+//                   pesino_pharma@yahoo.co.in
+//                 </a>
+//               </div>
+
+//               <div className="flex items-center gap-3">
+//                 <Mail size={18} className=" flex-shrink-0" />
+//                 <a
+//                   href="mailto:pesino.group@gmail.com"
+//                   className="transition-colors text-xs break-all"
+//                 >
+//                   pesino.group@gmail.com
+//                 </a>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </footer>
+//   )
+// }
+
 'use client'
 
-import React, { useState } from 'react'
 import Link from 'next/link'
-import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
-import { Logo } from '@/components/Logo/Logo'
+import { MapPin, Mail, Phone, Building2, ArrowRight } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('')
-
-  const companyLinks = [
-    { label: 'Home', url: '/' },
-    { label: 'Our Facility', url: '/ourfacility' },
-    { label: 'Products', url: '/Products' },
-    { label: 'Contact Us', url: '/Contactus' },
+  const pathname = usePathname()
+  const productColumns = [
+    [
+      'Antibiotics (Anti-infectives)',
+      'Antifungal Medicines',
+      'Antiviral Medicines',
+      'Pain Management',
+      'Cardiovascular Medicines',
+      'Diabetes Medicines',
+      'Gastrointestinal Medicines',
+      'Respiratory Medicines',
+      'Allergy Medicines',
+      'Central Nervous System (CNS) Medicines',
+    ],
+    [
+      'Oncology (Cancer) Medicines',
+      'Hormonal Medicines',
+      'Vitamins & Nutritional Supplements',
+      'Obstetrics & Gynecology Medicines',
+      'Pediatric Medicines',
+      'Injectable Hospital Products',
+      'Ophthalmic (Eye) Medicines',
+      'Dermatology Medicines',
+      'Vaccines & Immunological Products',
+      'Pharmaceutical Excipients',
+    ],
+    [
+      'Anesthetics',
+      'Urology Medicines',
+      'Rheumatology Medicines',
+      'Endocrinology Medicines',
+      'Anti-parasitic Medicines',
+      'Anti-tuberculosis (TB) Medicines',
+      'Antimalarial Medicines',
+      'HIV/AIDS Medicines',
+      'Hepatitis Medicines',
+      'Intravenous (IV) Fluids',
+    ],
+    [
+      'Nutrition Products (Enteral & Parenteral)',
+      'Veterinary Medicines',
+      'Over-the-Counter (OTC) Medicines',
+      "Women's Health Products",
+      "Men's Health Products",
+      'Sexual Health Medicines',
+      'Smoking Cessation Medicines',
+      'Weight Management Medicines',
+      'Sleep Disorder Medicines',
+      'Rare Disease (Orphan) Medicines',
+    ],
+    [
+      'Herbal & Phytopharmaceutical Products',
+      'Homeopathic Medicines',
+      'Ayurvedic Medicines',
+      'Probiotics & Microbiome Products',
+      'Wound Care Products',
+      'Antiseptics & Disinfectants',
+      'Drug Delivery Systems (Patches, Implants, etc.)',
+      'Combination Medicines',
+      'Intravenous (IV) Fluids',
+    ],
   ]
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Subscribed:', email)
-    setEmail('')
-  }
+  const companies = [
+    'Sashalife Healthcare, India',
+    '4 Life Healthcare INC, Philippines',
+    'BPC, Philippines',
+    'Hira Pharmaceuticals, Philippines',
+    'Sashalife Healthcare Africa, Zambia',
+    'Pesino Group',
+  ]
 
   return (
-    <footer className="bg-navy text-white py-12 md:py-24">
-      <div className="responsive-mx">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-          <div className="">
-            <Link href="/">
-              <Logo priority={true} className="invert dark:invert-0" />
-            </Link>
+    <footer className="bg-[#101A25] text-white mt-24">
+      <div className="responsive-mx md:py-16 py-14">
+        {/* ================= PRODUCT RANGE ================= */}
 
-            <p className=" font-poppins-400 text-sm leading-relaxed max-w-sm mt-2">
-              Precision and Excellence in Pharmaceutical Manufacturing: Explore Pesino Pharma&apos;s
-              State-of-the-Art Facilities and Commitment to Quality Production.
-            </p>
+        <h2 className="text-[#2BB564] text-3xl font-poppins-600 uppercase">Our Product Range</h2>
 
-            <div className="space-y-3 mt-8">
-              <h4 className="font-poppins-600 text-lg">Subscribe</h4>
-              <form onSubmit={handleSubscribe} className="flex">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  aria-label="Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-[#1a2836]  placeholder-gray/60 px-4 py-3 rounded-l-lg w-full max-w-[220px] text-sm focus:outline-none focus:ring-1 focus:ring-blue"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-[#1a2836]  px-4 py-3 rounded-r-lg hover:bg-blue/90 transition-colors"
-                  aria-label="Subscribe"
+        <div className="grid grid-cols-1 sm:grid-cols-2 font-poppins-400 md:grid-cols-3 xl:grid-cols-5 gap-8 md:mt-10 mt-7">
+          {productColumns.map((column, index) => (
+            <div key={index} className="space-y-3">
+              {column.map((item) => {
+                const isActive = item === 'Pediatric Medicines'
+
+                return (
+                  <div
+                    key={item}
+                    className={`flex items-center gap-2 text-sm whitespace-nowrap leading-relaxed transition cursor-pointer ${
+                      isActive ? 'text-[#2BB564]' : 'text-gray-300 hover:text-[#2BB564]'
+                    }`}
+                  >
+                    <span>{item}</span>
+
+                    {isActive && <ArrowRight size={15} className="text-[#2BB564]" />}
+                  </div>
+                )
+              })}
+            </div>
+          ))}
+        </div>
+
+        {/* Divider */}
+
+        {/* <div className="border-t border-white/10 my-14" /> */}
+
+        {/* ================= BOTTOM GRID ================= */}
+
+        <div className="grid xl:grid-cols-[1.2fr_.95fr] gap-10 md:mt-20 mt-12">
+          {/* ================= LEFT SIDE ================= */}
+
+          <div>
+            <div className="border-t border-white/10 " />
+            <h3 className="text-[#2BB564] text-2xl pt-7 md:hidden block font-bold">Quick Links:</h3>
+            <div className="flex flex-wrap md:pt-10 pt-7 items-center justify-between gap-y-6">
+              <h3 className="text-[#2BB564] text-2xl md:block hidden font-bold">Quick Links:</h3>
+              <Link
+                href="/"
+                className={`transition pb-1 border-b-2 ${
+                  pathname === '/'
+                    ? 'text-[#2BB564] border-[#2BB564]'
+                    : 'text-gray-300 border-transparent hover:text-[#2BB564]'
+                }`}
+              >
+                Home
+              </Link>
+
+              <Link
+                href="/ourfacility"
+                className={`transition pb-1 border-b-2 ${
+                  pathname === '/ourfacility'
+                    ? 'text-[#2BB564] border-[#2BB564]'
+                    : 'text-gray-300 border-transparent hover:text-[#2BB564]'
+                }`}
+              >
+                Our Facility
+              </Link>
+
+              <Link
+                href="/Products"
+                className={`transition pb-1 border-b-2 ${
+                  pathname === '/Products'
+                    ? 'text-[#2BB564] border-[#2BB564]'
+                    : 'text-gray-300 border-transparent hover:text-[#2BB564]'
+                }`}
+              >
+                Products
+              </Link>
+
+              <Link
+                href="/Contactus"
+                className={`transition pb-1 border-b-2 ${
+                  pathname === '/Contactus'
+                    ? 'text-[#2BB564] border-[#2BB564]'
+                    : 'text-gray-300 border-transparent hover:text-[#2BB564]'
+                }`}
+              >
+                Contact
+              </Link>
+            </div>
+
+            <div className="border-t border-white/10 md:my-10 my-7" />
+
+            <h3 className="text-[#2BB564] text-2xl font-bold mb-8">Pesino Group of Companies</h3>
+
+            <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-5 gap-3">
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className={`rounded-xl min-h-[130px] p-5 flex flex-col items-start justify-start transition hover:-translate-y-1 ${
+                    index === 5 ? 'bg-[#2BB564] items-center justify-center' : 'bg-white'
+                  }`}
                 >
-                  <ArrowRight size={20} />
-                </button>
-              </form>
+                  {index === 5 ? (
+                    <Link href="/">
+                      <Image
+                        src="/plogo.png"
+                        alt="Payload Logo"
+                        width={80}
+                        height={35}
+                        className="w-20 h-20"
+                      />
+                    </Link>
+                  ) : (
+                    <>
+                      <div className="md:w-12 md:h-12 w-10 h-10 rounded-full bg-[#2BB564] flex items-center justify-center">
+                        <Building2 className="text-white" size={22} />
+                      </div>
+
+                      <p className="text-[#4F4F51] md:text-base text-sm tracking-wide leading-6 mt-4">
+                        {company}
+                      </p>
+                    </>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="md:pl-10 lg:pl-20">
-            <h4 className="font-poppins-600 text-white text-lg mb-6">Company</h4>
-            <nav className="space-y-5">
-              {companyLinks.map(({ label, url }) => (
-                <Link
-                  key={label}
-                  href={url}
-                  className="block hover:text-blue transition-colors text-sm"
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          {/* ================= RIGHT SIDE ================= */}
 
-          <div>
-            <h4 className="font-poppins-600 text-lg mb-6">Head Office</h4>
-            <div className="space-y-5">
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className=" flex-shrink-0" />
-                <span className=" text-xs leading-relaxed">
-                  11/8-405, Ashish Complex, Dahisar East, Mumbai-400068, India
-                </span>
+          <div className="md:space-y-8 space-y-6">
+            {/* Manufacturing */}
+
+            <div className="border border-[#2BB564] rounded-xl md:p-6 p-4 bg-white/5">
+              <div className="flex items-start gap-4">
+                <div className="md:w-14 md:h-14 w-10 h-10 shrink-0 rounded-full border border-[#2BB564] flex items-center justify-center">
+                  <MapPin className="md:w-8 md:h-8 w-4 h-4 text-[#2BB564]" />
+                </div>
+
+                <div>
+                  <h4 className="md:text-xl font-poppins-600">Manufacturing Plant</h4>
+
+                  <p className="text-sm text-[#ffffff]/50 mt-2 font-poppins-400 leading-6">
+                    Block No. B, Ta Kalol, Golden Industrial Estate, Gandhinagar, Gujarat 382721
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Head Office */}
+
+            <div className="border border-[#2BB564] rounded-xl p-6 bg-white/5">
+              <div className="flex items-start gap-4">
+                <div className="md:w-14 md:h-14 w-10 h-10 shrink-0 rounded-full border border-[#2BB564] flex items-center justify-center">
+                  <MapPin className="md:w-8 md:h-8 w-4 h-4 text-[#2BB564]" />
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-font-poppins-600">Head Office</h4>
+
+                  <p className="text-sm text-[#ffffff]/50 mt-2 leading-6 font-poppins-400">
+                    11/B-405, Ashish Complex, Dahisar East, Mumbai-400068, India
+                  </p>
+                </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone size={18} className=" flex-shrink-0" />
-                <a href="tel:+919082872218" className=" transition-colors text-xs">
-                  +91 9082872218
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone size={18} className=" flex-shrink-0" />
-                <a href="tel:+918655100951" className=" transition-colors text-xs">
-                  +91 8655100951
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail size={18} className=" flex-shrink-0" />
+              <div className="flex flex-col md:flex-row items-center gap-4 mt-6">
                 <a
-                  href="mailto:pesino_pharma@yahoo.co.in"
-                  className="transition-colors text-xs break-all"
+                  href="tel:+919223445336"
+                  className="bg-[#2BB564] font-poppins-500 rounded-full w-full items-center px-6 py-3 flex justify-center md:w-fit gap-2 text-xs font-medium"
                 >
-                  pesino_pharma@yahoo.co.in
+                  <Phone size={18} />
+                  +91 9223445336 / +91 8591269348
                 </a>
-              </div>
 
-              <div className="flex items-center gap-3">
-                <Mail size={18} className=" flex-shrink-0" />
                 <a
                   href="mailto:pesino.group@gmail.com"
-                  className="transition-colors text-xs break-all"
+                  className="bg-[#2BB564] font-poppins-500 rounded-full w-full items-center px-6 py-3 flex justify-center md:w-fit gap-2 text-xs font-medium"
                 >
+                  <Mail size={20} />
                   pesino.group@gmail.com
+                </a>
+              </div>
+            </div>
+
+            {/* Colombia */}
+
+            <div className="border border-[#2BB564] rounded-xl p-6 bg-white/5">
+              <div className="flex items-start gap-4">
+                <div className="md:w-14 md:h-14 w-10 h-10 shrink-0 rounded-full border border-[#2BB564] flex items-center justify-center">
+                  <MapPin className="md:w-8 md:h-8 w-4 h-4 text-[#2BB564]" />
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-poppins-600">Pesino Pharmaceuticals S.A.S</h4>
+
+                  <p className="text-sm text-[#ffffff]/50 font-poppins-400 mt-2 leading-6">
+                    Ave. 4 Norte No. 7N-46, L 335 Cali, Colombia
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <a
+                  href="mailto:colombia@pesinopharma.com"
+                  className="bg-[#2BB564] font-poppins-500 rounded-full w-full items-center px-6 py-3 flex justify-center md:w-fit gap-2 text-xs font-medium"
+                >
+                  <Mail size={18} />
+                  colombia@pesinopharma.com
                 </a>
               </div>
             </div>
