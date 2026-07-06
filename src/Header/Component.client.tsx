@@ -11,6 +11,7 @@ import { HeaderNav } from './Nav'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ReactCountryFlag from 'react-country-flag'
 
 interface HeaderClientProps {
   data: Header
@@ -44,9 +45,19 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         <div className="hidden md:flex items-center gap-10">
           <Button
             size="lg"
-            className="bg-blue text-white border border-blue lg:text-base text-sm rounded-full px-8 font-poppins-400 font-medium hover:bg-white hover:text-black hover:border-black   transition-all"
+            className="bg-blue text-white border border-blue lg:text-base text-sm rounded-full px-8 font-poppins-400 font-medium hover:bg-white hover:text-black hover:border-black transition-all"
           >
-            <a href="tel:+8591269348">+91 8591269348</a>
+            <a href="tel:+573330740660" className="flex items-center gap-2">
+              <ReactCountryFlag
+                countryCode="CO"
+                svg
+                style={{
+                  width: '1.3em',
+                  height: '1.3em',
+                }}
+              />
+              +57 3330740660
+            </a>
           </Button>
         </div>
 
@@ -106,11 +117,16 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                   <p className="text-xs font-semibold text-black/40 uppercase tracking-widest">
                     Quick Contact
                   </p>
-                  <a
-                    href="tel:+918591269348"
-                    className="block text-base font-medium text-black hover:text-blue transition-colors"
-                  >
-                    +91 8591269348
+                  <a href="tel:+573330740660" className="flex text-black items-center gap-2">
+                    <ReactCountryFlag
+                      countryCode="CO"
+                      svg
+                      style={{
+                        width: '1.2em',
+                        height: '1.2em',
+                      }}
+                    />
+                    +57 3330740660
                   </a>
                 </div>
 
@@ -118,7 +134,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                   size="lg"
                   className="w-full bg-blue text-white border border-blue rounded-xl py-0 font-poppins-500 font-semibold text-base hover:bg-white hover:text-black hover:border-black transition-all shadow-lg shadow-blue/20"
                 >
-                  <a href="tel:+918591269348">Call Now</a>
+                  <a href="tel:+573330740660">Call Now</a>
                 </Button>
 
                 <p className="text-center text-xs text-black/30 font-medium">

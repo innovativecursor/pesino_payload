@@ -1,135 +1,10 @@
-// 'use client'
-
-// import React, { useState } from 'react'
-// import Link from 'next/link'
-// import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
-// import { Logo } from '@/components/Logo/Logo'
-
-// export const Footer: React.FC = () => {
-//   const [email, setEmail] = useState('')
-
-//   const companyLinks = [
-//     { label: 'Home', url: '/' },
-//     { label: 'Our Facility', url: '/ourfacility' },
-//     { label: 'Products', url: '/Products' },
-//     { label: 'Contact Us', url: '/Contactus' },
-//   ]
-
-//   const handleSubscribe = (e: React.FormEvent) => {
-//     e.preventDefault()
-//     console.log('Subscribed:', email)
-//     setEmail('')
-//   }
-
-//   return (
-//     <footer className="bg-navy text-white py-12 md:py-24">
-//       <div className="responsive-mx">
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-//           <div className="">
-//             <Link href="/">
-//               <Logo priority={true} className="invert dark:invert-0" />
-//             </Link>
-
-//             <p className=" font-poppins-400 text-sm leading-relaxed max-w-sm mt-2">
-//               Precision and Excellence in Pharmaceutical Manufacturing: Explore Pesino Pharma&apos;s
-//               State-of-the-Art Facilities and Commitment to Quality Production.
-//             </p>
-
-//             <div className="space-y-3 mt-8">
-//               <h4 className="font-poppins-600 text-lg">Subscribe</h4>
-//               <form onSubmit={handleSubscribe} className="flex">
-//                 <input
-//                   type="email"
-//                   placeholder="Email Address"
-//                   aria-label="Email Address"
-//                   value={email}
-//                   onChange={(e) => setEmail(e.target.value)}
-//                   className="bg-[#1a2836]  placeholder-gray/60 px-4 py-3 rounded-l-lg w-full max-w-[220px] text-sm focus:outline-none focus:ring-1 focus:ring-blue"
-//                   required
-//                 />
-//                 <button
-//                   type="submit"
-//                   className="bg-[#1a2836]  px-4 py-3 rounded-r-lg hover:bg-blue/90 transition-colors"
-//                   aria-label="Subscribe"
-//                 >
-//                   <ArrowRight size={20} />
-//                 </button>
-//               </form>
-//             </div>
-//           </div>
-
-//           <div className="md:pl-10 lg:pl-20">
-//             <h4 className="font-poppins-600 text-white text-lg mb-6">Company</h4>
-//             <nav className="space-y-5">
-//               {companyLinks.map(({ label, url }) => (
-//                 <Link
-//                   key={label}
-//                   href={url}
-//                   className="block hover:text-blue transition-colors text-sm"
-//                 >
-//                   {label}
-//                 </Link>
-//               ))}
-//             </nav>
-//           </div>
-
-//           <div>
-//             <h4 className="font-poppins-600 text-lg mb-6">Head Office</h4>
-//             <div className="space-y-5">
-//               <div className="flex items-start gap-3">
-//                 <MapPin size={18} className=" flex-shrink-0" />
-//                 <span className=" text-xs leading-relaxed">
-//                   11/8-405, Ashish Complex, Dahisar East, Mumbai-400068, India
-//                 </span>
-//               </div>
-
-//               <div className="flex items-center gap-3">
-//                 <Phone size={18} className=" flex-shrink-0" />
-//                 <a href="tel:+918591269348" className=" transition-colors text-xs">
-//                   +91 8591269348
-//                 </a>
-//               </div>
-
-//               <div className="flex items-center gap-3">
-//                 <Phone size={18} className=" flex-shrink-0" />
-//                 <a href="tel:+918655100951" className=" transition-colors text-xs">
-//                   +91 8655100951
-//                 </a>
-//               </div>
-
-//               <div className="flex items-center gap-3">
-//                 <Mail size={18} className=" flex-shrink-0" />
-//                 <a
-//                   href="mailto:pesino_pharma@yahoo.co.in"
-//                   className="transition-colors text-xs break-all"
-//                 >
-//                   pesino_pharma@yahoo.co.in
-//                 </a>
-//               </div>
-
-//               <div className="flex items-center gap-3">
-//                 <Mail size={18} className=" flex-shrink-0" />
-//                 <a
-//                   href="mailto:pesino.group@gmail.com"
-//                   className="transition-colors text-xs break-all"
-//                 >
-//                   pesino.group@gmail.com
-//                 </a>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   )
-// }
-
 'use client'
 
 import Link from 'next/link'
 import { MapPin, Mail, Phone, Building2, ArrowRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import ReactCountryFlag from "react-country-flag";
 
 export const Footer: React.FC = () => {
   const pathname = usePathname()
@@ -214,22 +89,21 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 font-poppins-400 md:grid-cols-3 xl:grid-cols-5 gap-8 md:mt-10 mt-7">
           {productColumns.map((column, index) => (
             <div key={index} className="space-y-3">
-              {column.map((item) => {
-                const isActive = item === 'Pediatric Medicines'
+              {column.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-2 text-sm whitespace-nowrap leading-relaxed"
+                >
+                  <span className="group flex items-center gap-2 cursor-pointer text-gray-300 hover:text-[#2BB564] transition">
+                    {item}
 
-                return (
-                  <div
-                    key={item}
-                    className={`flex items-center gap-2 text-sm whitespace-nowrap leading-relaxed transition cursor-pointer ${
-                      isActive ? 'text-[#2BB564]' : 'text-gray-300 hover:text-[#2BB564]'
-                    }`}
-                  >
-                    <span>{item}</span>
-
-                    {isActive && <ArrowRight size={15} className="text-[#2BB564]" />}
-                  </div>
-                )
-              })}
+                    <ArrowRight
+                      size={15}
+                      className="opacity-0 group-hover:opacity-100 text-[#2BB564] transition-opacity duration-200"
+                    />
+                  </span>
+                </div>
+              ))}
             </div>
           ))}
         </div>
@@ -405,7 +279,15 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6">
+              <div className="flex flex-col md:flex-row items-center gap-4 mt-6">
+                <a
+                  href="tel:+919223445336"
+                  className="bg-[#2BB564] font-poppins-500 rounded-full w-full items-center px-6 py-3 flex justify-center md:w-fit gap-2 text-xs font-medium"
+                >
+                  <Phone size={18} />
+                  +57 3330740660
+                </a>
+
                 <a
                   href="mailto:colombia@pesinopharma.com"
                   className="bg-[#2BB564] font-poppins-500 rounded-full w-full items-center px-6 py-3 flex justify-center md:w-fit gap-2 text-xs font-medium"

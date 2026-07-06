@@ -3,11 +3,25 @@ import Image from 'next/image'
 import { TopBanner } from '../ui/TopBananer'
 import { ContactData } from './ContactData'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import ReactCountryFlag from 'react-country-flag'
 
 export const AllContactData = () => {
   const HeadOfficeCard = () => (
     <div className="bg-white rounded-xl md:shadow-xl md:p-6 p-3 max-w-lg w-full">
-      <h3 className="text-xl font-bold text-black mb-4">Pesino Pharmaceuticals Pvt. Ltd.</h3>
+      <h3 className="flex items-center gap-2 text-xl font-bold text-black mb-4">
+        <span>Pesino Pharmaceuticals Pvt. Ltd.</span>
+        <span className="inline-flex overflow-hidden rounded-lg">
+          <ReactCountryFlag
+            countryCode="IN"
+            svg
+            style={{
+              width: '1.2em',
+              height: '1.2em',
+              display: 'block',
+            }}
+          />
+        </span>
+      </h3>
 
       <div className="space-y-4 md:text-sm text-xs text-black font-poppins-400">
         <div className="flex items-start gap-3">
@@ -37,7 +51,20 @@ export const AllContactData = () => {
 
   const HeadOfficeColombia = () => (
     <div className="bg-white rounded-xl md:shadow-xl md:p-6 p-3 max-w-lg w-full">
-      <h3 className="text-xl font-bold text-black mb-4">Pesino Pharmaceuticals S.A.S</h3>
+      <h3 className="flex items-center gap-2 text-xl font-bold text-black mb-4">
+        <span>Pesino Pharmaceuticals S.A.S</span>
+        <span className="inline-flex overflow-hidden rounded-lg">
+          <ReactCountryFlag
+            countryCode="CO"
+            svg
+            style={{
+              width: '1.2em',
+              height: '1.2em',
+              display: 'block',
+            }}
+          />
+        </span>
+      </h3>
 
       <div className="space-y-4 md:text-sm text-xs text-black font-poppins-400">
         <div className="flex items-start gap-3 font-poppins-400">
@@ -45,6 +72,13 @@ export const AllContactData = () => {
             <MapPin className="w-3 h-3 text-white" />
           </div>
           <p>Ave. 4 Norte No. 7N-46, L. 335 Cali, Colombia</p>
+        </div>
+
+        <div className="flex items-start gap-3">
+          <div className="md:w-6 md:h-6 w-5 h-5 rounded-full flex justify-center items-center bg-blue">
+            <Phone className="w-3 h-3 text-white" />
+          </div>
+          <p>+57 3330740660</p>
         </div>
 
         <div className="flex items-start gap-3 font-poppins-400">
@@ -106,7 +140,7 @@ export const AllContactData = () => {
           </div>
         </div>
 
-         <div className="flex flex-col  gap-6">
+        <div className="flex flex-col  gap-6">
           <div className="relative w-full rounded-xl h-[600px] overflow-hidden hidden md:block">
             <div className="absolute top-1/2 left-8 z-10">
               <HeadOfficeColombia />
@@ -137,7 +171,7 @@ export const AllContactData = () => {
             />
             <div className="absolute inset-0 bg-black/40 pointer-events-none hidden md:block" />
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   )
