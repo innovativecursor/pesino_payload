@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-import type { Header } from '@/payload-types'
+import type { Header, HeaderSocialIcon } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
@@ -16,9 +16,10 @@ import { SocialIcons } from './SocialLinks'
 
 interface HeaderClientProps {
   data: Header
+  socialIcons?: HeaderSocialIcon
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = ({ data: _data, socialIcons }) => {
   const [theme, setTheme] = useState<string | null>(null)
   const { headerTheme, setHeaderTheme } = useHeaderTheme()
   const pathname = usePathname()
@@ -44,7 +45,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
           <HeaderNav />
         </div>
         <div className="hidden md:flex items-center gap-5">
-          <SocialIcons />
+          <SocialIcons socialIcons={socialIcons?.socialIcons} />
           <Button
             size="lg"
             className="bg-blue text-white border border-blue lg:text-base text-sm rounded-full px-6 font-poppins-400 font-medium hover:bg-white hover:text-black hover:border-black transition-all"
@@ -132,7 +133,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                   </a>
                 </div>
 
-                <SocialIcons />
+                <SocialIcons socialIcons={socialIcons?.socialIcons} />
 
                 <Button
                   size="lg"

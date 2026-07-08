@@ -101,12 +101,16 @@ export interface Config {
     footer: Footer;
     hero: Hero;
     'about-page': AboutPage;
+    'hero-slides': HeroSlide;
+    'header-social-icons': HeaderSocialIcon;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     hero: HeroSelect<false> | HeroSelect<true>;
     'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
+    'hero-slides': HeroSlidesSelect<false> | HeroSlidesSelect<true>;
+    'header-social-icons': HeaderSocialIconsSelect<false> | HeaderSocialIconsSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1105,6 +1109,39 @@ export interface AboutPage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-slides".
+ */
+export interface HeroSlide {
+  id: number;
+  slides: {
+    title: string;
+    line1: string;
+    line2: string;
+    line3: string;
+    desktopImage: number | Media;
+    mobileImage?: (number | null) | Media;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header-social-icons".
+ */
+export interface HeaderSocialIcon {
+  id: number;
+  socialIcons: {
+    iconImage: number | Media;
+    link?: string | null;
+    whatsAppNumber?: string | null;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -1179,6 +1216,43 @@ export interface AboutPageSelect<T extends boolean = true> {
     | T
     | {
         image?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-slides_select".
+ */
+export interface HeroSlidesSelect<T extends boolean = true> {
+  slides?:
+    | T
+    | {
+        title?: T;
+        line1?: T;
+        line2?: T;
+        line3?: T;
+        desktopImage?: T;
+        mobileImage?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header-social-icons_select".
+ */
+export interface HeaderSocialIconsSelect<T extends boolean = true> {
+  socialIcons?:
+    | T
+    | {
+        iconImage?: T;
+        link?: T;
+        whatsAppNumber?: T;
         id?: T;
       };
   updatedAt?: T;

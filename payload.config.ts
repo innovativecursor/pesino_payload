@@ -13,6 +13,8 @@ import { Users } from './src/collections/Users'
 import { Footer } from './src/Footer/config'
 import { Header } from './src/Header/config'
 import { Hero } from './src/HeroPart/config'
+import { HeroSlides } from './src/HeroSlides/config'
+import { HeaderSocialIcons } from './src/Header/socialIcons'
 import { plugins } from './src/plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './src/utilities/getURL'
@@ -66,7 +68,7 @@ export default buildConfig({
   }),
   collections: [Pages, Posts, Media, Categories, Users, Products, ContactSubmissions],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer, Hero, AboutPage],
+  globals: [Header, Footer, Hero, AboutPage, HeroSlides, HeaderSocialIcons],
   plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
