@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ReactCountryFlag from 'react-country-flag'
+import { SocialIcons } from './SocialLinks'
 
 interface HeaderClientProps {
   data: Header
@@ -42,10 +43,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         <div className="hidden md:flex items-center">
           <HeaderNav />
         </div>
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-5">
+          <SocialIcons />
           <Button
             size="lg"
-            className="bg-blue text-white border border-blue lg:text-base text-sm rounded-full px-8 font-poppins-400 font-medium hover:bg-white hover:text-black hover:border-black transition-all"
+            className="bg-blue text-white border border-blue lg:text-base text-sm rounded-full px-6 font-poppins-400 font-medium hover:bg-white hover:text-black hover:border-black transition-all"
           >
             <a href="tel:+573330740660" className="flex items-center gap-2">
               <ReactCountryFlag
@@ -129,6 +131,8 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
                     +57 3330740660
                   </a>
                 </div>
+
+                <SocialIcons />
 
                 <Button
                   size="lg"

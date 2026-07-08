@@ -12,13 +12,23 @@ export const AllProducts = () => {
 
   return (
     <div className="pt-20 md:pt-32 mb-12 responsive-mx">
-      <TopBanner
+      {/* <TopBanner
         src="/product-banner.png"
         alt="Products"
         title="Products"
         description="Elevate Your Well-being with Pesino Pharma's Premium Pharmaceutical Products - Discover Quality, Efficacy, and Innovation in Every Dose!"
         buttonText="Contact us"
         buttonHref="/Contactus"
+      /> */}
+
+      <TopBanner
+        src="/product-banner.png"
+        alt="Products"
+        title="Products"
+        description="Elevate Your Well-being with Pesino Pharma's Premium Pharmaceutical Products - Discover Quality, Efficacy, and Innovation in Every Dose!"
+        buttonText="Download Product List"
+        buttonHref="/productlist.pdf"
+        downloadFile={true}
       />
 
       {/* Search Bar */}

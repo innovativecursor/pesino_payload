@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Download } from 'lucide-react'
 import Button from '../ui/Button'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -14,6 +14,7 @@ type TopBannerProps = {
   description?: string
   buttonText?: string
   buttonHref?: string
+  downloadFile?: boolean
   width?: number
   height?: number
   className?: string
@@ -26,6 +27,7 @@ export function TopBanner({
   description,
   buttonText,
   buttonHref,
+  downloadFile = false,
   width = 1200,
   height = 800,
   className = '',
@@ -98,13 +100,26 @@ export function TopBanner({
             </p>
           )}
 
-          <div className="md:block hidden">
+          <div className="">
             {buttonText && buttonHref && (
               <div className="mt-4 md:mt-8">
-                <Button href={buttonHref}>
-                  {buttonText}
-                  <ArrowUpRight size={18} />
-                </Button>
+                {buttonText && buttonHref && (
+                  <div className="mt-4 md:mt-8">
+                    {downloadFile ? (
+                      <a href={buttonHref} download>
+                        <button className="bg-blue text-white md:text-sm text-xs rounded-full px-6 py-3 flex items-center gap-2 hover:bg-green-600 transition">
+                          {buttonText}
+                          <Download size={16} />
+                        </button>
+                      </a>
+                    ) : (
+                      <Button href={buttonHref}>
+                        {buttonText}
+                        <ArrowUpRight size={18} />
+                      </Button>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>

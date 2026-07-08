@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { MapPin, Mail, Phone, Building2, ArrowRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import ReactCountryFlag from "react-country-flag";
+import ReactCountryFlag from 'react-country-flag'
 
 export const Footer: React.FC = () => {
   const pathname = usePathname()
@@ -66,7 +66,6 @@ export const Footer: React.FC = () => {
       'Antiseptics & Disinfectants',
       'Drug Delivery Systems (Patches, Implants, etc.)',
       'Combination Medicines',
-      'Intravenous (IV) Fluids',
     ],
   ]
 
@@ -296,6 +295,20 @@ export const Footer: React.FC = () => {
                   colombia@pesinopharma.com
                 </a>
               </div>
+            </div>
+
+            <div className="flex md:justify-end justify-center">
+              <p className="text-xs text-white/70">
+                Designed & Developed by{' '}
+                <Link
+                  href="https://www.innovativecursor.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#2BB564] hover:underline font-medium"
+                >
+                  Innovative Cursor
+                </Link>
+              </p>
             </div>
           </div>
         </div>
