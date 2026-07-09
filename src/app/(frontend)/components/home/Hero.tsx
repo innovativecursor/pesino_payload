@@ -190,36 +190,60 @@ const Hero = () => {
               '.hero-sub',
               '.hero-slide-img',
               '.hero-flag',
-              '.hero-title-line-1',
-              '.hero-title-line-2',
-              '.hero-title-line-3',
             ],
             {
               opacity: 0,
-              duration: 0.5,
+              duration: 0.7,
               ease: 'power2.inOut',
             },
+            0,
+          )
+          .to(
+            [
+              '.hero-title-line-1',
+              '.hero-title-line-2',
+              '.hero-title-line-3',
+              '.hero-desc',
+              '.hero-buttons',
+            ],
+            {
+              opacity: 0,
+              y: -20,
+              duration: 0.7,
+              ease: 'power2.inOut',
+            },
+            0,
           )
 
           .call(() => {
             setCurrentSlideIndex(nextIdx)
           })
 
-          .to({}, { duration: 0.15 })
+          .to({}, { duration: 0.2 })
 
           .set('.hero-slide-img', { scale: 1.05, opacity: 0 })
           .set('.hero-sub', { y: 10, opacity: 0 })
           .set('.hero-flag', { opacity: 0 })
-          .set(['.hero-title-line-1', '.hero-title-line-2', '.hero-title-line-3'], {
-            opacity: 0,
-            text: '',
-          })
+          .set(
+            [
+              '.hero-title-line-1',
+              '.hero-title-line-2',
+              '.hero-title-line-3',
+              '.hero-desc',
+              '.hero-buttons',
+            ],
+            {
+              opacity: 0,
+              y: 20,
+              filter: 'blur(10px)',
+            },
+          )
 
           .to('.hero-slide-img', {
             opacity: 1,
             scale: 1,
-            duration: 0.8,
-            ease: 'power2.out',
+            duration: 1.1,
+            ease: 'power3.out',
           })
 
           .to(
@@ -227,82 +251,61 @@ const Hero = () => {
             {
               opacity: 1,
               y: 0,
-              duration: 0.5,
-              ease: 'power2.out',
+              duration: 0.7,
+              ease: 'power3.out',
             },
-            '-=0.4',
+            '-=0.6',
           )
 
           .to(
             '.hero-flag',
             {
               opacity: 1,
-              duration: 0.5,
-              ease: 'power2.out',
+              duration: 0.7,
+              ease: 'power3.out',
             },
-            '-=0.2',
+            '-=0.3',
           )
 
-          .call(() => {
-            document.querySelector('.hero-title-line-1')?.classList.add('typing-cursor')
-          })
           .to(
-            '.hero-title-line-1',
+            ['.hero-title-line-1', '.hero-title-line-2', '.hero-title-line-3'],
             {
               opacity: 1,
-              duration: 0.1,
+              y: 0,
+              filter: 'blur(0px)',
+              duration: 1.2,
+              stagger: 0.18,
+              ease: 'power3.out',
             },
-            '-=0.2',
+            '-=0.45',
           )
-          .to('.hero-title-line-1', {
-            text: {
-              value: line1,
+
+          .to(
+            '.hero-desc',
+            {
+              opacity: 1,
+              y: 0,
+              filter: 'blur(0px)',
+              duration: 1.2,
+              stagger: 0.18,
+              ease: 'power3.out',
             },
-            duration: line1.length * 0.05,
-            ease: 'none',
-          })
-          .call(() => {
-            document.querySelector('.hero-title-line-1')?.classList.remove('typing-cursor')
-          })
+            '-=0.85',
+          )
 
-          .call(() => {
-            document.querySelector('.hero-title-line-2')?.classList.add('typing-cursor')
-          })
-          .to('.hero-title-line-2', {
-            opacity: 1,
-            duration: 0.1,
-          })
-          .to('.hero-title-line-2', {
-            text: {
-              value: line2,
+          .to(
+            '.hero-buttons',
+            {
+              opacity: 1,
+              y: 0,
+              filter: 'blur(0px)',
+              duration: 1.2,
+              ease: 'power3.out',
             },
-            duration: line2.length * 0.05,
-            ease: 'none',
-          })
-          .call(() => {
-            document.querySelector('.hero-title-line-2')?.classList.remove('typing-cursor')
-          })
+            '-=0.85',
+          )
 
-          .call(() => {
-            document.querySelector('.hero-title-line-3')?.classList.add('typing-cursor')
-          })
-          .to('.hero-title-line-3', {
-            opacity: 1,
-            duration: 0.1,
-          })
-          .to('.hero-title-line-3', {
-            text: {
-              value: line3,
-            },
-            duration: line3.length * 0.05,
-            ease: 'none',
-          })
-
-          .to({}, { duration: 3 })
-
-          .call(() => {
-            document.querySelector('.hero-title-line-3')?.classList.remove('typing-cursor')
-          })
+          .to({}, { duration: 4.5 })
       })
 
       if (stats.length > 0) {
