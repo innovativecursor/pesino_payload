@@ -9,7 +9,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 import type { Media } from '@/payload-types'
-import { getMediaUrl } from '@/utilities/getMediaUrl'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, TextPlugin)
@@ -82,13 +81,13 @@ const Hero = () => {
               slide.desktopImage &&
               typeof slide.desktopImage === 'object' &&
               'url' in slide.desktopImage
-                ? getMediaUrl(slide.desktopImage.url)
+                ? slide.desktopImage.url || ''
                 : ''
             const mobileImageUrl =
               slide.mobileImage &&
               typeof slide.mobileImage === 'object' &&
               'url' in slide.mobileImage
-                ? getMediaUrl(slide.mobileImage.url)
+                ? slide.mobileImage.url || ''
                 : desktopImageUrl
             return {
               title: slide.title || '',
